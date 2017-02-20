@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <title>ngPlaybook</title>
+
+    <script type="text/javascript">
+        // Must be first. IE10 mobile viewport fix
+        if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "@@-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="client/styles/css/bootstrap.css" rel="stylesheet" />
+    <link href="client/styles/animate.css" rel="stylesheet" />
+    <link href="client/styles/site.css" rel="stylesheet" />
+</head>
+<body ng-app="ngPlaybook" class="ng-cloak">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a ng-href="/" class="navbar-brand">ngPlaybook</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a ng-href="/login">Security</a></li>
+                <li><a ng-href="/alerts">Alerting</a></li>
+                <li><a ng-href="/ui">UI</a></li>
+                <li><a ng-href="/forms">Forms</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" ng-view></div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12" ui-view></div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="client/app/app.config.js"></script>
+    <script src="client/app/common/common.module.js"></script>
+    <script src="client/app/common/decorators/exceptionHandlerDecorator.js"></script>
+    <script src="client/app/common/decorators/interpolateDebugDecorator.js"></script>
+    <script src="client/app/common/interceptors/requestInterceptor.js"></script>
+    <script src="client/app/common/interceptors/addTokenInterceptor.js"></script>
+    <script src="client/app/common/interceptors/loginRedirectInterceptor.js"></script>
+    <script src="client/app/common/services/formEncoderService.js"></script>
+    <script src="client/app/common/services/currentUserService.js"></script>
+    <script src="client/app/common/services/oathService.js"></script>
+    <script src="client/app/common/services/recipeService.js"></script>
+    <script src="client/app/common/services/localStorageService.js"></script>
+
+    <script src="client/app/common/work-spinner/work-spinner.directive.js"></script>
+
+    <script src="client/app/common/alerting/alert.module.js"></script>
+    <script src="client/app/common/alerting/alert.service.js"></script>
+    <script src="client/app/common/alerting/alerts.directive.js"></script>
+
+    <script src="client/app/common/filters/unsafeFilter.js"></script>
+
+    <script src="client/app/components/login/login.component.js"></script>
+    <script src="client/app/components/error-prone/error-prone.component.js"></script>
+    <script src="client/app/components/ui-stuff/ui-stuff.component.js"></script>
+    <script src="client/app/components/user-list/user-list.component.js"></script>
+    <script src="client/app/components/user-list/userRemovalConfirmation.service.js"></script>
+
+    <script src="client/app/components/forms/forms.component.js"></script>
+    <script src="client/app/components/forms/userModel.service.js"></script>
+
+    <script src="client/app/components/recipe/recipe.component.js"></script>
+</body>
+</html>

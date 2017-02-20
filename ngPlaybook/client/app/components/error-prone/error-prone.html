@@ -1,0 +1,45 @@
+﻿<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <h4>Alert</h4>
+            <div class="btn-group" role="group">
+                <button type="button" ng-click="vm.makeSuccess()" class="btn btn-success">Success</button>
+                <button type="button" ng-click="vm.makeInfo()" class="btn btn-info">Info</button>
+                <button type="button" ng-click="vm.makeWarn()" class="btn btn-warning">Warn</button>
+                <button type="button" ng-click="vm.makeError()" class="btn btn-danger">Error</button>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <form class="col-sm-8" ng-submit="vm.makeAlert()">
+                <div class="form-group">
+                    <input class="form-control" type="text" ng-model="vm.alertMessage" />
+                    <span>{{vm.alertMessage.length}}</span>
+                </div>
+                <div class="form-group">
+                    <select class="form-control"
+                            ng-init="alertTypes = ['success', 'info', 'warning', 'danger']"
+                            ng-model="vm.alertType"
+                            ng-options="item for item in alertTypes"></select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <hr />
+        <div class="row">
+            <h4>Exceptions</h4>
+            <button class="btn btn-danger" type="button" ng-click="vm.makeException()">Throw</button>
+        </div>
+        <div class="row">
+            <h4>Spinner</h4>
+            <button class="btn btn-default" type="button" ng-click="vm.makeSuccessRequest()">Get-Success</button>
+            <button class="btn btn-default" type="button" ng-click="vm.makeBadRequest()">Get-Bad</button>
+            <a class="btn btn-default" ng-href="/404?q=foo">404</a>
+            <a class="btn btn-default" ng-href="/noRoute">Route Error</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <work-spinner><i class="fa fa-refresh fa-spin"></i></work-spinner>
+        <alerts></alerts>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿<div class="row">
+    <h3>Forms</h3>
+    <div class="col-md-6">
+        <form name="vm.userForm" ng-submit="vm.submit()">
+            <h2>Sign Up</h2>
+            <div>
+                <label for="userName">Your user name:</label>
+                <input 
+                    type="text" id="userName" placeholder="User name" 
+                    name="userName" ng-model="vm.user.userName" />
+            </div>
+            <input type="submit" value="Submit" class="btn btn-sm btn-primary" />
+        </form>
+    </div>
+    <div class="col-md-6">
+        <pre>{{vm.userForm | json}}</pre>
+    </div>
+</div>

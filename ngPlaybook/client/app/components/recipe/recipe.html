@@ -1,0 +1,24 @@
+﻿<div class="row">
+    <h1 ng-bind-html="vm.recipe.title"></h1>
+    
+    <!-- using ngSanitize, angular removes any JavaScript or HTML from the input -->
+    <input type="text" ng-model="vm.recipe.title" />
+    
+    <!-- !!! MAKE SURE YOU KNOW WHAT YOU ARE DOING !!! -->
+    <!-- using $sce however you can do whatever you want -->
+    <!-- e.g. onmouseoever="alert('foo')" -->
+    <h1 ng-bind-html="vm.getTrustedTitle()"></h1>
+    
+    <!-- Or just use our custom unsafe filter which uses $sce indirectly -->
+    <h1 ng-bind-html="vm.recipe.title | unsafe"></h1>
+
+    <ul>
+        <li ng-repeat="ingredient in vm.recipe.ingredients">
+            {{ingredient.name}} {{ingredient.quantity}}
+        </li>
+    </ul>
+
+    <div>
+        {{vm.recipe.instructions}}
+    </div>
+</div>
